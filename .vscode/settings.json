@@ -1,0 +1,15 @@
+{
+    "makefile.launchConfigurations": [
+        {
+            "cwd": "d:\\OneDrive\\C\\shapecalc",
+            "binaryPath": "d:\\OneDrive\\C\\shapecalc\\shapecalc.exe",
+            "binaryArgs": []
+        }
+    ],
+    "files.associations": {
+        "stdlib.h": "c",
+        "string.h": "c",
+        "safeinput.h": "c",
+        "rockpaperscissors.h": "c"
+    }
+}
