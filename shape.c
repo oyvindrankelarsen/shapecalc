@@ -23,32 +23,56 @@ void Shape()
 
         if (strcmp(form, "Rektangel") == 0)
         {
-            GetInputFloat("Mata in basen: ", &basen);
-            GetInputFloat("Mata in höjden: ", &höjden);
+            while (!(GetInputFloat("Mata in basen: ", &basen)))
+            {
+                printf("Mata bara in tal\n");
+            }
+            while (!(GetInputFloat("Mata in höjden: ", &höjden)))
+            {
+                printf("Mata bara in tal\n");
+            }
             omkrets = 2 * basen + 2 * höjden;
             area = basen * höjden;
             printf("Omkretsen är %.2f och area är %.2f\n", omkrets, area);
         }
         else if (strcmp(form, "Parallellogram") == 0)
         {
-            GetInputFloat("Mata in basen: ", &basen);
-            GetInputFloat("Mata in höjden: ", &höjden);
+            while (!(GetInputFloat("Mata in basen: ", &basen)))
+            {
+                printf("Mata bara in tal\n");
+            }
+            while (!(GetInputFloat("Mata in höjden: ", &höjden)))
+            {
+                printf("Mata bara in tal\n");
+            }
             omkrets = 2 * basen + 2 * höjden;
             area = basen * höjden;
             printf("Omkretsen är %.2f och area är %.2f\n", omkrets, area);
         }
         else if (strcmp(form, "Triangel") == 0)
-        { 
-            GetInputFloat("Mata in sida a: ", &a);
-            GetInputFloat("Mata in sida b: ", &b);
-            GetInputFloat("Mata in sida c: ", &c);
+        {
+            while (!(GetInputFloat("Mata in sida a: ", &a)))
+            {
+                printf("Mata bara in tal\n");
+            }
+            while (!(GetInputFloat("Mata in sida b: ", &b)))
+            {
+                printf("Mata bara in tal\n");
+            }
+            while (!(GetInputFloat("Mata in sida c: ", &c)))
+            {
+                printf("Mata bara in tal\n");
+            }
             omkrets = a + b + c;
             area = a * b / 2;
             printf("Omkretsen är %.2f och area är %.2f\n", omkrets, area);
         }
         else if (strcmp(form, "Cirkel") == 0)
         {
-            GetInputFloat("Mata in radie: ", &radie);
+            while (!(GetInputFloat("Mata in radie: ", &radie)))
+            {
+                printf("Mata bara in tal\n");
+            }
             omkrets = pi * radie * 2;
             area = pi * (radie * radie);
             printf("Omkretsen är %.2f och area är %.2f\n", omkrets, area);

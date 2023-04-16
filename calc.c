@@ -7,8 +7,17 @@ void Calc()
     while (1)
     {
         float tal1 = 0, tal2 = 0;
-        GetInputFloat("Mata in tal 1: ", &tal1);
-        GetInputFloat("Mata in tal 2: ", &tal2);
+
+        while (!(GetInputFloat("Mata in tal 1: ", &tal1)))
+        {
+            printf("Mata bara in tal\n");
+        }
+
+        while (!(GetInputFloat("Mata in tal 2: ", &tal2)))
+        {
+            printf("Mata bara in tal\n");
+        }
+
         printf("\nMiniräknarmeny\n");
         printf("1. +\n");
         printf("2. -\n");
@@ -18,7 +27,10 @@ void Calc()
         printf("6. Huvudmeny\n");
 
         int sel = 0;
-        GetInputInt("Välj Operator från menyn: ", &sel);
+        while (!(GetInputInt("Välj Operator från menyn: ", &sel)))
+        {
+            printf("Mata bara in tal\n");
+        }
         if (sel == 1)
         {
             printf("Summan av %.2f och %.2f är %.2f \n", tal1, tal2, tal1 + tal2);

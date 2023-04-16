@@ -16,7 +16,10 @@ int main()
         printf("4. Exit\n");
 
         int sel = 0;
-        GetInputInt("Välj:", &sel);
+        while (!(GetInputInt("Välj: ", &sel)))
+        {
+            printf("Mata bara in tal\n");
+        }
         if (sel == 1)
             Shape();
         else if (sel == 2)
