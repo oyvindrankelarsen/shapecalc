@@ -4,7 +4,7 @@
 #include "calc.h"
 #include "shape.h"
 #include "rockpaperscissors.h"
-
+////-Werror -pedantic
 int main()
 {
     while (1)
