@@ -2,12 +2,36 @@
 #include "calc.h"
 #include "safeinput.h"
 
-void Calc()
+float plus(float a, float b)
+{
+    return a + b;
+}
+
+float minus(float a, float b)
+{
+    return a - b;
+}
+
+float multiplikation(float a, float b)
+{
+    return a * b;
+}
+
+float division(float a, float b)
+{
+    return a / b;
+}
+
+int modulus(float a, float b) // ändrat till int
+{
+    return (int)a % (int)b;
+}
+
+void calcmenu()
 {
     while (1)
     {
         float tal1 = 0, tal2 = 0;
-
         while (!(GetInputFloat("Mata in tal 1: ", &tal1)))
         {
             printf("Mata bara in tal\n");
@@ -33,29 +57,36 @@ void Calc()
         }
         if (sel == 1)
         {
-            printf("Summan av %.2f och %.2f är %.2f \n", tal1, tal2, tal1 + tal2);
+            float resultat = plus(tal1, tal2);
+            printf("Summan av %.2f och %.2f är %.2f \n", tal1, tal2, resultat);
         }
         else if (sel == 2)
         {
-            printf("Skillnaden av %.2f och %.2f är %.2f\n", tal1, tal2, tal1 - tal2);
+            float resultat = minus(tal1, tal2);
+            printf("Skillnaden av %.2f och %.2f är %.2f\n", tal1, tal2, resultat);
         }
+
         else if (sel == 3)
         {
-            printf("Produkten av %.2f och %.2f är %.2f\n", tal1, tal2, tal1 * tal2);
+            float resultat = multiplikation(tal1, tal2);
+            printf("Produkten av %.2f och %.2f är %.2f\n", tal1, tal2, resultat);
         }
+
         else if (sel == 4)
         {
-            printf("Kvoten av %.2f och %.2f är %.2f\n", tal1, tal2, tal1 / tal2);
+            float resultat = division(tal1, tal2);
+            printf("Kvoten av %.2f och %.2f är %.2f\n", tal1, tal2, resultat);
         }
+
         else if (sel == 5)
         {
-            int result = (int)tal1 % (int)tal2;
-            printf("Resten av %d och %d är %d\n", (int)tal1, (int)tal2, result);
+            int resultat = modulus(tal1, tal2);
+            printf("Resten av %d och %d är %d\n", (int)tal1, (int)tal2, (int)resultat);
         }
+
         else if (sel == 6)
-        {
             break;
-        }
+
         else
             printf("Välj ett alternativ ur menyn\n");
     }

@@ -4,7 +4,8 @@
 #include "calc.h"
 #include "shape.h"
 #include "rockpaperscissors.h"
-////-Werror -pedantic
+//-Werror
+
 int main()
 {
     while (1)
@@ -21,16 +22,17 @@ int main()
             printf("Mata bara in tal\n");
         }
         if (sel == 1)
-            Shape();
+            shapemenu();
         else if (sel == 2)
-            Calc();
+            calcmenu();
         else if (sel == 3)
-            Rockpaperscissors();
+            rpsmenu();
         else if (sel == 4)
+        {
+            printf("Tack för den här gången!");
             exit(0);
+        }
         else
             printf("Välj ett alternativ ur menyn\n");
     }
-
-    return 0;
 }

@@ -5,7 +5,7 @@
 #include "safeinput.h"
 #include "shape.h"
 
-void Shape()
+void shapemenu()
 {
     while (1)
     {
@@ -17,8 +17,12 @@ void Shape()
         printf("Huvudmeny\n");
 
         char form[100] = {0};
-        GetInput("Välj:", form, 100);
-
+        
+        while (!(GetInput("Välj:", form, 100)))
+        {
+            printf("Mata bara in tal\n");
+        }
+        
         float omkrets = 0, area = 0, basen = 0, höjden = 0, radie = 0, a = 0, b = 0, c = 0;
 
         if (strcmp(form, "Rektangel") == 0)

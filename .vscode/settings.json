@@ -10,6 +10,8 @@
         "stdlib.h": "c",
         "string.h": "c",
         "safeinput.h": "c",
-        "rockpaperscissors.h": "c"
+        "rockpaperscissors.h": "c",
+        "functional": "c",
+        "random": "cpp"
     }
 }

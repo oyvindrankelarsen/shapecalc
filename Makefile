@@ -29,5 +29,11 @@ clean:
 $(OUTPUTDIR):
 		@mkdir "$(OUTPUTDIR)"
 
-.PHONY: clean
+$(TEST): calc.o 
+		g++ -o $@ $^ $(CFLAGS) -I $(GTEST) $(LIBGTEST)
+
+test: $(TEST)
+		./$(TEST)
+
+.PHONY: clean test
 
