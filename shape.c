@@ -114,7 +114,7 @@ void shapemenu()
             }
             r.radie = radie;
             r = cirkel(r);
-            printf("Omkretsen är %.20f och area är %.20f\n", r.omkrets, r.area);
+            printf("Omkretsen är %.2f och area är %.2f\n", r.omkrets, r.area);
         }
         else if (strcmp(form, "Huvudmeny") == 0)
             break;
