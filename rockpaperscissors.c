@@ -21,7 +21,7 @@ int savefile(Resultat r) // fyll på med datum och procent rätt
     struct tm *tm = localtime(&t);
     char *datetime = asctime(tm);
     datetime[strlen(datetime) - 1] = '\0';
-    fprintf(f, "%s Wins: %d Ties: %d Losses: %d. Du vann i %d procent av försöken.\r\n", datetime, r.wins, r.ties, r.losses, andelvinst);
+    fprintf(f, "%s Wins: %d Ties: %d Losses: %d. Du vann i %d procent av försöken.\r", datetime, r.wins, r.ties, r.losses, andelvinst);
     fclose(f);
     return 0;
 }

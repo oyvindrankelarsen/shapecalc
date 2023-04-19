@@ -5,8 +5,37 @@
 #include "safeinput.h"
 #include "shape.h"
 
+Result rektangel(Result r)
+{
+    r.omkrets = 2 * r.a + 2 * r.b;
+    r.area = r.a * r.b;
+    return r;
+}
+
+Result parallellogram(Result r)
+{
+    r.omkrets = 2 * r.a + 2 * r.b;
+    r.area = r.a * r.b;
+    return r;
+}
+
+Result triangel(Result r)
+{
+    r.omkrets = r.a + r.b + r.c;
+    r.area = r.a * r.b / 2;
+    return r;
+}
+
+Result cirkel(Result r)
+{
+    r.omkrets = 2 * pi * r.radie;
+    r.area = pi * r.radie * r.radie;
+    return r;
+}
+
 void shapemenu()
 {
+    Result r = {0, 0, 0};
     while (1)
     {
         printf("\nFormmeny\n");
@@ -17,13 +46,12 @@ void shapemenu()
         printf("Huvudmeny\n");
 
         char form[100] = {0};
-        
-        while (!(GetInput("Välj:", form, 100)))
+        float basen = 0, höjden = 0, radie = 0, a = 0, b = 0, c = 0;
+
+        while (GetInput("Mata in text från menyn: ", form, sizeof(form)) != INPUT_RESULT_OK)
         {
-            printf("Mata bara in tal\n");
+            printf("Mata bara in text enligt menyn\n");
         }
-        
-        float omkrets = 0, area = 0, basen = 0, höjden = 0, radie = 0, a = 0, b = 0, c = 0;
 
         if (strcmp(form, "Rektangel") == 0)
         {
@@ -35,10 +63,12 @@ void shapemenu()
             {
                 printf("Mata bara in tal\n");
             }
-            omkrets = 2 * basen + 2 * höjden;
-            area = basen * höjden;
-            printf("Omkretsen är %.2f och area är %.2f\n", omkrets, area);
+            r.a = basen;
+            r.b = höjden;
+            r = rektangel(r);
+            printf("Omkretsen är %.2f och area är %.2f\n", r.omkrets, r.area);
         }
+
         else if (strcmp(form, "Parallellogram") == 0)
         {
             while (!(GetInputFloat("Mata in basen: ", &basen)))
@@ -49,10 +79,12 @@ void shapemenu()
             {
                 printf("Mata bara in tal\n");
             }
-            omkrets = 2 * basen + 2 * höjden;
-            area = basen * höjden;
-            printf("Omkretsen är %.2f och area är %.2f\n", omkrets, area);
+            r.a = basen;
+            r.b = höjden;
+            r = parallellogram(r);
+            printf("Omkretsen är %.2f och area är %.2f\n", r.omkrets, r.area);
         }
+
         else if (strcmp(form, "Triangel") == 0)
         {
             while (!(GetInputFloat("Mata in sida a: ", &a)))
@@ -67,19 +99,22 @@ void shapemenu()
             {
                 printf("Mata bara in tal\n");
             }
-            omkrets = a + b + c;
-            area = a * b / 2;
-            printf("Omkretsen är %.2f och area är %.2f\n", omkrets, area);
+            r.a = a;
+            r.b = b;
+            r.c = c;
+            r = triangel(r);
+            printf("Omkretsen är %.2f och area är %.2f\n", r.omkrets, r.area);
         }
+
         else if (strcmp(form, "Cirkel") == 0)
         {
             while (!(GetInputFloat("Mata in radie: ", &radie)))
             {
                 printf("Mata bara in tal\n");
             }
-            omkrets = pi * radie * 2;
-            area = pi * (radie * radie);
-            printf("Omkretsen är %.2f och area är %.2f\n", omkrets, area);
+            r.radie = radie;
+            r = cirkel(r);
+            printf("Omkretsen är %.20f och area är %.20f\n", r.omkrets, r.area);
         }
         else if (strcmp(form, "Huvudmeny") == 0)
             break;
