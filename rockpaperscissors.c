@@ -1,10 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include <time.h>
 #include "safeinput.h"
 #include "rockpaperscissors.h"
 
-int savefile(Resultat r)
+int savefile(Resultat r) // fyll på med datum och procent rätt
 {
     char *path = "score.txt";
     FILE *f = fopen(path, "a");
@@ -14,8 +15,13 @@ int savefile(Resultat r)
         perror(path);
         return EXIT_FAILURE;
     }
-
-    fprintf(f, "Wins: %d\tTies: %d\tLosses: %d\n", r.wins, r.ties, r.losses);
+    int sum = r.wins + r.losses + r.ties;
+    int andelvinst = 100 * r.wins / sum;
+    time_t t = time(NULL);
+    struct tm *tm = localtime(&t);
+    char *datetime = asctime(tm);
+    datetime[strlen(datetime) - 1] = '\0';
+    fprintf(f, "%s Wins: %d Ties: %d Losses: %d. Du vann i %d procent av försöken.\r\n", datetime, r.wins, r.ties, r.losses, andelvinst);
     fclose(f);
     return 0;
 }
@@ -47,7 +53,7 @@ void rpsmenu()
     {
         int player = 0, computer = 0;
 
-        printf("Sten sax påse\n");
+        printf("\nSten sax påse\n");
         printf("1. Sten\n");
         printf("2. Sax\n");
         printf("3. Påse\n");

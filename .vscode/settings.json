@@ -12,6 +12,7 @@
         "safeinput.h": "c",
         "rockpaperscissors.h": "c",
         "functional": "c",
-        "random": "cpp"
+        "random": "cpp",
+        "sstream": "c"
     }
 }
