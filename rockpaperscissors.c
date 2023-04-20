@@ -5,7 +5,7 @@
 #include "safeinput.h"
 #include "rockpaperscissors.h"
 
-int savefile(Resultat r) // fyll på med datum och procent rätt
+int savefile(Resultat r)
 {
     char *path = "score.txt";
     FILE *f = fopen(path, "a");

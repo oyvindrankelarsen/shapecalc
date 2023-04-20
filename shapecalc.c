@@ -4,7 +4,6 @@
 #include "calc.h"
 #include "shape.h"
 #include "rockpaperscissors.h"
-//-Werror
 
 int main()
 {

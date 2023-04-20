@@ -22,7 +22,7 @@ float division(float a, float b)
     return a / b;
 }
 
-int modulus(float a, float b) // ändrat till int
+int modulus(float a, float b)
 {
     return (int)a % (int)b;
 }
