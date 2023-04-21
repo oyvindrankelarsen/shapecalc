@@ -3,7 +3,7 @@ TEST=check.exe
 SOURCES=shapecalc.c calc.c shape.c rockpaperscissors.c safeinput.c 
 DEPS=calc.h shape.h rockpaperscissors.h safeinput.h  
 CC=gcc
-CFLAGS=-Wall -std=c11
+CFLAGS=-Wall -Werror -std=c11
 GTEST = gtest
 DEBUG?=1
 LIBGTEST = C:\msys64\mingw64\lib\libgtest_main.a C:\msys64\mingw64\lib\libgtest.a
