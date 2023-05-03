@@ -3,7 +3,12 @@
 
 
 
-#Tests
+# Tests
+```
+PS D:\OneDrive\C\shapecalc> mingw32-make test
+gcc -Wall -Werror -std=c11 -g   -c -o rockpaperscissors.o rockpaperscissors.c
+g++ -o check.exe calc.o Testcalc.o shape.o Testshape.o rockpaperscissors.o Testrpc.o safeinput.o -Wall -Werror -std=c11 -g -I gtest C:\msys64\mingw64\lib\libgtest_main.a C:\msys64\mingw64\lib\libgtest.a
+./check.exe
 Running main() from C:/M/mingw-w64-gtest/src/googletest-release-1.12.1/googletest/src/gtest_main.cc
 [==========] Running 18 tests from 3 test suites.
 [----------] Global test environment set-up.
@@ -55,3 +60,5 @@ Running main() from C:/M/mingw-w64-gtest/src/googletest-release-1.12.1/googletes
 [----------] Global test environment tear-down
 [==========] 18 tests from 3 test suites ran. (114 ms total)
 [  PASSED  ] 18 tests.
+
+```
