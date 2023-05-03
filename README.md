@@ -1,9 +1,12 @@
 # Shapecalc
+The main goal is to utilize Google Test (.cpp) to test the c code.
 
 # Project Description
 This project is part of my studies in "Software Development and Autonomous Vehicles".
-The main goal is to utilize Google Test (.cpp) to test the c code.
 The code consists of two parts, firstly calculating the area and the circumfence of different shapes and secondly to act as a calculator.
+
+# License
+GPLv3. See LICENSE.
 
 # How to install and run the project
 
@@ -17,7 +20,7 @@ The files are found in the ./debug folder.
 
 # Credits
 
-Safeinput is made by Stefan Holmberg (stefan.holmberg@systementor.se)
+safeinput is made by Stefan Holmberg (stefan.holmberg@systementor.se)
 
 # Tests
 
