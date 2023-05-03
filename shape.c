@@ -5,31 +5,31 @@
 #include "safeinput.h"
 #include "shape.h"
 
-Result rektangel(Result r)
+Result rectangle(Result r)
 {
-    r.omkrets = 2 * r.a + 2 * r.b;
+    r.circumference = 2 * r.a + 2 * r.b;
     r.area = r.a * r.b;
     return r;
 }
 
 Result parallellogram(Result r)
 {
-    r.omkrets = 2 * r.a + 2 * r.b;
+    r.circumference = 2 * r.a + 2 * r.b;
     r.area = r.a * r.b;
     return r;
 }
 
-Result triangel(Result r)
+Result triangle(Result r)
 {
-    r.omkrets = r.a + r.b + r.c;
+    r.circumference = r.a + r.b + r.c;
     r.area = r.a * r.b / 2;
     return r;
 }
 
-Result cirkel(Result r)
+Result circle(Result r)
 {
-    r.omkrets = 2 * pi * r.radie;
-    r.area = pi * r.radie * r.radie;
+    r.circumference = 2 * pi * r.radius;
+    r.area = pi * r.radius * r.radius;
     return r;
 }
 
@@ -38,87 +38,87 @@ void shapemenu()
     Result r = {0, 0, 0};
     while (1)
     {
-        printf("\nFormmeny\n");
-        printf("Rektangel\n");
+        printf("\nForms menu\n");
+        printf("Rectangle\n");
         printf("Parallellogram\n");
-        printf("Triangel\n");
-        printf("Cirkel\n");
-        printf("Huvudmeny\n");
+        printf("Triangle\n");
+        printf("Circle\n");
+        printf("Main menu\n");
 
         char form[100] = {0};
-        float basen = 0, höjden = 0, radie = 0, a = 0, b = 0, c = 0;
+        float base = 0, height = 0, radius = 0, a = 0, b = 0, c = 0;
 
-        while (GetInput("Mata in text från menyn: ", form, sizeof(form)) != INPUT_RESULT_OK)
+        while (GetInput("Enter text from the menu: ", form, sizeof(form)) != INPUT_RESULT_OK)
         {
-            printf("Mata bara in text enligt menyn\n");
+            printf("Only enter text from the menu\n");
         }
 
-        if (strcmp(form, "Rektangel") == 0)
+        if (strcmp(form, "Rectangle") == 0)
         {
-            while (!(GetInputFloat("Mata in basen: ", &basen)))
+            while (!(GetInputFloat("Enter the base: ", &base)))
             {
-                printf("Mata bara in tal\n");
+                printf("Only enter numbers\n");
             }
-            while (!(GetInputFloat("Mata in höjden: ", &höjden)))
+            while (!(GetInputFloat("Enter the height: ", &height)))
             {
-                printf("Mata bara in tal\n");
+                printf("Only enter numbers\n");
             }
-            r.a = basen;
-            r.b = höjden;
-            r = rektangel(r);
-            printf("Omkretsen är %.2f och area är %.2f\n", r.omkrets, r.area);
+            r.a = base;
+            r.b = height;
+            r = rectangle(r);
+            printf("circumference is %.2f and area is %.2f\n", r.circumference, r.area);
         }
 
         else if (strcmp(form, "Parallellogram") == 0)
         {
-            while (!(GetInputFloat("Mata in basen: ", &basen)))
+            while (!(GetInputFloat("Enter the base: ", &base)))
             {
-                printf("Mata bara in tal\n");
+                printf("Only enter numbers\n");
             }
-            while (!(GetInputFloat("Mata in höjden: ", &höjden)))
+            while (!(GetInputFloat("Enter the height: ", &height)))
             {
-                printf("Mata bara in tal\n");
+                printf("Only enter numbers\n");
             }
-            r.a = basen;
-            r.b = höjden;
+            r.a = base;
+            r.b = height;
             r = parallellogram(r);
-            printf("Omkretsen är %.2f och area är %.2f\n", r.omkrets, r.area);
+            printf("The circumference is %.2f and the area is %.2f\n", r.circumference, r.area);
         }
 
         else if (strcmp(form, "Triangel") == 0)
         {
-            while (!(GetInputFloat("Mata in sida a: ", &a)))
+            while (!(GetInputFloat("Enter side a: ", &a)))
             {
-                printf("Mata bara in tal\n");
+                printf("Only enter numbers\n");
             }
-            while (!(GetInputFloat("Mata in sida b: ", &b)))
+            while (!(GetInputFloat("Enter side b: ", &b)))
             {
-                printf("Mata bara in tal\n");
+                printf("Only enter numbers\n");
             }
-            while (!(GetInputFloat("Mata in sida c: ", &c)))
+            while (!(GetInputFloat("Enter side c: ", &c)))
             {
-                printf("Mata bara in tal\n");
+                printf("Only enter numbers\n");
             }
             r.a = a;
             r.b = b;
             r.c = c;
-            r = triangel(r);
-            printf("Omkretsen är %.2f och area är %.2f\n", r.omkrets, r.area);
+            r = triangle(r);
+            printf("The circumference is %.2f and the area is %.2f\n", r.circumference, r.area);
         }
 
         else if (strcmp(form, "Cirkel") == 0)
         {
-            while (!(GetInputFloat("Mata in radie: ", &radie)))
+            while (!(GetInputFloat("Enter the radius: ", &radius)))
             {
-                printf("Mata bara in tal\n");
+                printf("Only enter numbers\n");
             }
-            r.radie = radie;
-            r = cirkel(r);
-            printf("Omkretsen är %.2f och area är %.2f\n", r.omkrets, r.area);
+            r.radius = radius;
+            r = circle(r);
+            printf("circumference is %.2f and area is %.2f\n", r.circumference, r.area);
         }
-        else if (strcmp(form, "Huvudmeny") == 0)
+        else if (strcmp(form, "Main menu") == 0)
             break;
         else
-            printf("Välj ur menyn\n");
+            printf("Choose from the menu\n");
     }
 }

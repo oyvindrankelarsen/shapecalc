@@ -9,16 +9,16 @@ int main()
 {
     while (1)
     {
-        printf("\nHuvudmeny\n");
-        printf("1. Former\n");
-        printf("2. Miniräknare\n");
-        printf("3. StenSaxPåse\n");
+        printf("\Main menu\n");
+        printf("1. Shapes\n");
+        printf("2. Calculator\n");
+        printf("3. Rock Paper Scissors\n");
         printf("4. Exit\n");
 
         int sel = 0;
-        while (!(GetInputInt("Välj: ", &sel)))
+        while (!(GetInputInt("Choose: ", &sel)))
         {
-            printf("Mata bara in tal\n");
+            printf("Only enter numbers\n");
         }
         if (sel == 1)
             shapemenu();
@@ -28,10 +28,10 @@ int main()
             rpsmenu();
         else if (sel == 4)
         {
-            printf("Tack för den här gången!");
+            printf("Thank you for this time!");
             exit(0);
         }
         else
-            printf("Välj ett alternativ ur menyn\n");
+            printf("Choose an alternative from the menu\n");
     }
 }

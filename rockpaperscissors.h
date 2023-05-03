@@ -4,10 +4,10 @@
 typedef struct
 {
     int wins, losses, ties;
-} Resultat;
+} Result;
 void rpsmenu();
-int savefile(Resultat r);
+int savefile(Result r);
 
-Resultat result(int player, int computer, Resultat r);
+Result res(int player, int computer, Result r);
 
 #endif

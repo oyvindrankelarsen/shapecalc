@@ -2,17 +2,17 @@
 #include "calc.h"
 #include "safeinput.h"
 
-float plus(float a, float b)
+float addition(float a, float b)
 {
     return a + b;
 }
 
-float minus(float a, float b)
+float subtraction(float a, float b)
 {
     return a - b;
 }
 
-float multiplikation(float a, float b)
+float multiplication(float a, float b)
 {
     return a * b;
 }
@@ -31,63 +31,63 @@ void calcmenu()
 {
     while (1)
     {
-        float tal1 = 0, tal2 = 0;
-        while (!(GetInputFloat("Mata in tal 1: ", &tal1)))
+        float no1 = 0, no2 = 0;
+        while (!(GetInputFloat("Enter number 1: ", &no1)))
         {
-            printf("Mata bara in tal\n");
+            printf("Only enter numbers\n");
         }
 
-        while (!(GetInputFloat("Mata in tal 2: ", &tal2)))
+        while (!(GetInputFloat("Enter number 2: ", &no2)))
         {
-            printf("Mata bara in tal\n");
+            printf("Only enter numbers\n");
         }
 
-        printf("\nMiniräknarmeny\n");
+        printf("\nCalculator menu\n");
         printf("1. +\n");
         printf("2. -\n");
         printf("3. *\n");
         printf("4. /\n");
         printf("5. %s\n", "%");
-        printf("6. Huvudmeny\n");
+        printf("6. Main menu\n");
 
         int sel = 0;
-        while (!(GetInputInt("Välj Operator från menyn: ", &sel)))
+        while (!(GetInputInt("Choose Operator from the menu: ", &sel)))
         {
-            printf("Mata bara in tal\n");
+            printf("Only enter numbers\n");
         }
         if (sel == 1)
         {
-            float resultat = plus(tal1, tal2);
-            printf("Summan av %.2f och %.2f är %.2f \n", tal1, tal2, resultat);
+            float resultat = addition(no1, no2);
+            printf("The sum of %.2f and %.2f is %.2f \n", no1, no2, resultat);
         }
         else if (sel == 2)
         {
-            float resultat = minus(tal1, tal2);
-            printf("Skillnaden av %.2f och %.2f är %.2f\n", tal1, tal2, resultat);
+            float resultat = subtraction(no1, no2);
+            printf("The difference of %.2f and %.2f is %.2f\n", no1, no2, resultat);
         }
 
         else if (sel == 3)
         {
-            float resultat = multiplikation(tal1, tal2);
-            printf("Produkten av %.2f och %.2f är %.2f\n", tal1, tal2, resultat);
+            float resultat = multiplication(no1, no2);
+            printf("The product of %.2f and %.2f is %.2f\n", no1, no2, resultat);
         }
 
         else if (sel == 4)
         {
-            float resultat = division(tal1, tal2);
-            printf("Kvoten av %.2f och %.2f är %.2f\n", tal1, tal2, resultat);
+            float resultat = division(no1, no2);
+            printf("the quota of %.2f och %.2f is %.2f\n", no1, no2, resultat);
         }
 
         else if (sel == 5)
         {
-            int resultat = modulus(tal1, tal2);
-            printf("Resten av %d och %d är %d\n", (int)tal1, (int)tal2, (int)resultat);
+            int resultat = modulus(no1, no2);
+            printf("The rest of %d och %d is %d\n", (int)no1, (int)no2, (int)resultat);
         }
 
         else if (sel == 6)
             break;
 
         else
-            printf("Välj ett alternativ ur menyn\n");
+            printf("Choose an alternative from the menu\n");
     }
 }

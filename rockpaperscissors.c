@@ -5,89 +5,89 @@
 #include "safeinput.h"
 #include "rockpaperscissors.h"
 
-int savefile(Resultat r)
+int savefile(Result r)
 {
     char *path = "score.txt";
     FILE *f = fopen(path, "a");
     if (!f)
     {
-        printf("Kunde inte spara resultatet i fil\n");
+        printf("Could not save the result in file\n");
         perror(path);
         return EXIT_FAILURE;
     }
     int sum = r.wins + r.losses + r.ties;
-    int andelvinst = 100 * r.wins / sum;
+    int sharewins = 100 * r.wins / sum;
     time_t t = time(NULL);
     struct tm *tm = localtime(&t);
     char *datetime = asctime(tm);
     datetime[strlen(datetime) - 1] = '\0';
-    fprintf(f, "%s Wins: %d Ties: %d Losses: %d. Du vann i %d procent av försöken.\r", datetime, r.wins, r.ties, r.losses, andelvinst);
+    fprintf(f, "%s Wins: %d Ties: %d Losses: %d. You won in %d percent of your attempts.\r", datetime, r.wins, r.ties, r.losses, sharewins);
     fclose(f);
     return 0;
 }
 
-Resultat result(int player, int computer, Resultat r)
+Result res(int player, int computer, Result r)
 {
     if (player == computer)
     {
         r.ties++;
-        printf("Oavgjort!\n\n");
+        printf("Draw!\n\n");
     }
     else if ((player == 1 && computer == 2) || (player == 3 && computer == 1) || (player == 2 && computer == 3))
     {
         r.wins++;
-        printf("Du vann!\n\n");
+        printf("You won!\n\n");
     }
     else
     {
         r.losses++;
-        printf("Datorn vann!\n\n");
+        printf("The computer won!\n\n");
     }
     return r;
 }
 
 void rpsmenu()
 {
-    Resultat r = {0, 0, 0};
+    Result r = {0, 0, 0};
     while (1)
     {
         int player = 0, computer = 0;
 
-        printf("\nSten sax påse\n");
-        printf("1. Sten\n");
-        printf("2. Sax\n");
-        printf("3. Påse\n");
-        printf("4. Huvudmeny\n");
+        printf("\nRock paper scissors\n");
+        printf("1. Rock\n");
+        printf("2. Scissors\n");
+        printf("3. Paper\n");
+        printf("4. Main menu\n");
 
-        while (!(GetInputInt("Välj: ", &player)))
+        while (!(GetInputInt("Choose: ", &player)))
         {
-            printf("Mata bara in tal\n");
+            printf("Only enter numbers\n");
         }
 
         if (player == 1)
-            printf("Du valde sten\n");
+            printf("You chose rock\n");
         else if (player == 2)
-            printf("Du valde sax\n");
+            printf("You chose scissors\n");
         else if (player == 3)
-            printf("Du valde påse\n");
+            printf("You chose paper\n");
         else if (player == 4)
         {
             savefile(r);
             break;
         }
         else
-            printf("Välj ett alternativ ur menyn\n");
+            printf("Choose an alternative from the menu\n");
 
-        printf("Datorn valde");
+        printf("The computer chose");
         srand(time(NULL));
         computer = rand() % 3 + 1;
 
         if (computer == 1)
-            printf(" sten\n");
+            printf(" rock\n");
         else if (computer == 2)
-            printf(" sax\n");
+            printf(" scissors\n");
         else if (computer == 3)
-            printf(" påse\n");
-        r = result(player, computer, r);
+            printf(" paper\n");
+        r = res(player, computer, r);
     }
 }

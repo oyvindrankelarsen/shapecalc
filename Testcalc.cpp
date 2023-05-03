@@ -19,7 +19,7 @@ TEST_F(calcTest, Checkthatthecalculatorcanaddtwonumbers)
     // ARRANGE
     float result;
     // ACT
-    result = plus(100, 80);
+    result = addition(100, 80);
     // ASSERT
     ASSERT_EQ(result, 180);
 }
@@ -29,7 +29,7 @@ TEST_F(calcTest, Checkthatthecalculatorcansubtracttwonumbers)
     // ARRANGE
     float result;
     // ACT
-    result = minus(100, 80);
+    result = subtraction(100, 80);
     // ASSERT
     ASSERT_EQ(result, 20);
 }
@@ -39,7 +39,7 @@ TEST_F(calcTest, Checkthatthecalculatorcanmultiplytwonumbers)
     // ARRANGE
     float result;
     // ACT
-    result = multiplikation(100, 80);
+    result = multiplication(100, 80);
     // ASSERT
     ASSERT_EQ(result, 8000);
 }
