@@ -5,7 +5,7 @@
 #include "safeinput.h"
 #include "rockpaperscissors.h"
 
-int savefile(Result r)
+int savefile(Rpcresult r)
 {
     char *path = "score.txt";
     FILE *f = fopen(path, "a");
@@ -26,7 +26,7 @@ int savefile(Result r)
     return 0;
 }
 
-Result res(int player, int computer, Result r)
+Rpcresult res(int player, int computer, Rpcresult r)
 {
     if (player == computer)
     {
@@ -45,7 +45,7 @@ Result res(int player, int computer, Result r)
 
 void rpsmenu()
 {
-    Result r = {0, 0, 0};
+    Rpcresult r = {0, 0, 0};
     while (1)
     {
         int player = 0, computer = 0;

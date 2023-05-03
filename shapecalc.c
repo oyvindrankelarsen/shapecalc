@@ -9,7 +9,7 @@ int main()
 {
     while (1)
     {
-        printf("\Main menu\n");
+        printf("\n Main menu\n");
         printf("1. Shapes\n");
         printf("2. Calculator\n");
         printf("3. Rock Paper Scissors\n");

@@ -1,9 +1,26 @@
 # Shapecalc
 
+# Project Description
+This project is part of my studies in Software Development and Autonomous Vehicles.
+
+The main goal is to utilize Google Test (.cpp) to test the c code.
+
+The code consists of two parts, firstly calculating area and circumfence of different shapes and secondly to act as a calculator.
+
+# How to install and run the project
+
+Navigate to the directory where you want to install shapecalc.
+
+Then in a terminal run 'git clone https://github.com/oyvindrankelarsen/shapecalc.git'.
+
+To compile with mingw (on windows) run 'mingw32-make debug=1' which is equal to mingw32-make debug. (See Makefile).
+'mingw32-make debug=0' compiles optimized for release and the files are found in the ./release folder
 
 
 
 # Tests
+
+To run the tests run 'mingw32-make test'.
 ```
 PS D:\OneDrive\C\shapecalc> mingw32-make test
 gcc -Wall -Werror -std=c11 -g   -c -o rockpaperscissors.o rockpaperscissors.c

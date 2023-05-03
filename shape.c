@@ -5,28 +5,28 @@
 #include "safeinput.h"
 #include "shape.h"
 
-Result rectangle(Result r)
+Shaperesult rectangle(Shaperesult r)
 {
     r.circumference = 2 * r.a + 2 * r.b;
     r.area = r.a * r.b;
     return r;
 }
 
-Result parallellogram(Result r)
+Shaperesult parallellogram(Shaperesult r)
 {
     r.circumference = 2 * r.a + 2 * r.b;
     r.area = r.a * r.b;
     return r;
 }
 
-Result triangle(Result r)
+Shaperesult triangle(Shaperesult r)
 {
     r.circumference = r.a + r.b + r.c;
     r.area = r.a * r.b / 2;
     return r;
 }
 
-Result circle(Result r)
+Shaperesult circle(Shaperesult r)
 {
     r.circumference = 2 * pi * r.radius;
     r.area = pi * r.radius * r.radius;
@@ -35,7 +35,7 @@ Result circle(Result r)
 
 void shapemenu()
 {
-    Result r = {0, 0, 0};
+    Shaperesult r = {0, 0, 0};
     while (1)
     {
         printf("\nForms menu\n");

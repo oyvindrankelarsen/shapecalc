@@ -4,10 +4,11 @@
 typedef struct
 {
     int wins, losses, ties;
-} Result;
-void rpsmenu();
-int savefile(Result r);
+} Rpcresult;
 
-Result res(int player, int computer, Result r);
+void rpsmenu();
+int savefile(Rpcresult r);
+
+Rpcresult res(int player, int computer, Rpcresult r);
 
 #endif

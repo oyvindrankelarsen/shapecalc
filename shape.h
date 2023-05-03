@@ -3,13 +3,13 @@
 typedef struct
 {
     float a, b, c, radius, circumference, area;
-} Result;
+} Shaperesult;
 
 void shapemenu();
-Result rectangle(Result r);
-Result parallellogram(Result r);
-Result triangle(Result r);
-Result circle(Result r);
+Shaperesult rectangle(Shaperesult r);
+Shaperesult parallellogram(Shaperesult r);
+Shaperesult triangle(Shaperesult r);
+Shaperesult circle(Shaperesult r);
 
 
 #endif

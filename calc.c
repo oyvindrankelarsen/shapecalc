@@ -57,31 +57,31 @@ void calcmenu()
         }
         if (sel == 1)
         {
-            float resultat = addition(no1, no2);
-            printf("The sum of %.2f and %.2f is %.2f \n", no1, no2, resultat);
+            float result = addition(no1, no2);
+            printf("The sum of %.2f and %.2f is %.2f \n", no1, no2, result);
         }
         else if (sel == 2)
         {
-            float resultat = subtraction(no1, no2);
-            printf("The difference of %.2f and %.2f is %.2f\n", no1, no2, resultat);
+            float result = subtraction(no1, no2);
+            printf("The difference of %.2f and %.2f is %.2f\n", no1, no2, result);
         }
 
         else if (sel == 3)
         {
-            float resultat = multiplication(no1, no2);
-            printf("The product of %.2f and %.2f is %.2f\n", no1, no2, resultat);
+            float result = multiplication(no1, no2);
+            printf("The product of %.2f and %.2f is %.2f\n", no1, no2, result);
         }
 
         else if (sel == 4)
         {
-            float resultat = division(no1, no2);
-            printf("the quota of %.2f och %.2f is %.2f\n", no1, no2, resultat);
+            float result = division(no1, no2);
+            printf("the quota of %.2f och %.2f is %.2f\n", no1, no2, result);
         }
 
         else if (sel == 5)
         {
-            int resultat = modulus(no1, no2);
-            printf("The rest of %d och %d is %d\n", (int)no1, (int)no2, (int)resultat);
+            int result = modulus(no1, no2);
+            printf("The rest of %d och %d is %d\n", (int)no1, (int)no2, (int)result);
         }
 
         else if (sel == 6)
