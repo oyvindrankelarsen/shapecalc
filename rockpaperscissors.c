@@ -31,17 +31,14 @@ Result res(int player, int computer, Result r)
     if (player == computer)
     {
         r.ties++;
-        printf("Draw!\n\n");
     }
     else if ((player == 1 && computer == 2) || (player == 3 && computer == 1) || (player == 2 && computer == 3))
     {
         r.wins++;
-        printf("You won!\n\n");
     }
     else
     {
         r.losses++;
-        printf("The computer won!\n\n");
     }
     return r;
 }
@@ -89,5 +86,7 @@ void rpsmenu()
         else if (computer == 3)
             printf(" paper\n");
         r = res(player, computer, r);
+        printf("Wins: %d Ties: %d Losses: %d\n", r.wins, r.ties, r.losses);
+    
     }
 }
