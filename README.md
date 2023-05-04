@@ -11,7 +11,8 @@ GPLv3. See LICENSE.
 # How to install and run the project
 
 Navigate to the directory where you want to install shapecalc.
-Then in a terminal run 
+Then in a terminal run
+
 "git clone https://github.com/oyvindrankelarsen/shapecalc.git".
 
 To compile with mingw (on windows) run "mingw32-make DEBUG=1" which is equal to mingw32-make. (See the Makefile).
