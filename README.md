@@ -28,7 +28,7 @@ safeinput is made by Stefan Holmberg (stefan.holmberg@systementor.se)
 
 # Tests
 
-To run the tests run 'mingw32-make test'.
+To run the tests run "mingw32-make test".
 ```
 PS D:\OneDrive\C\shapecalc> mingw32-make test
 gcc -Wall -Werror -std=c11 -g   -c -o rockpaperscissors.o rockpaperscissors.c
