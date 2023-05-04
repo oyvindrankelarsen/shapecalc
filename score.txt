@@ -1,4 +1,1 @@
-Wed Apr 19 13:24:59 2023 Wins: 3 Ties: 4 Losses: 1. Du vann i 37 procent av försöken.
-
-Wed Apr 19 19:56:58 2023 Wins: 2 Ties: 2 Losses: 2. Du vann i 33 procent av försöken.
-Wed Apr 19 19:59:56 2023 Wins: 3 Ties: 3 Losses: 4. Du vann i 30 procent av försöken.
+Thu May 04 13:07:56 2023 Wins: 2 Ties: 2 Losses: 1. You won in 40 percent of your attempts.
