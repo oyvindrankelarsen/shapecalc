@@ -13,10 +13,12 @@ GPLv3. See LICENSE.
 Navigate to the directory where you want to install shapecalc.
 Then in a terminal run "git clone https://github.com/oyvindrankelarsen/shapecalc.git".
 
-To compile with mingw (on windows) run "mingw32-make debug=1" which is equal to mingw32-make. (See Makefile).
+To compile with mingw (on windows) run "mingw32-make DEBUG=1" which is equal to mingw32-make. (See the Makefile).
 The files are found in the ./debug folder.
 
-"mingw32-make debug=0" compiles optimized for release and the files are found in the ./release folder.
+"mingw32-make DEBUG=0" compiles optimized for release and the files are found in the ./release folder.
+
+Before the next compile run "mingw32-make clean".
 
 # Credits
 

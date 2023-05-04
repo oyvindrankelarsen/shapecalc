@@ -17,7 +17,7 @@ protected:
 TEST_F(shapeTest, checkareaandcircumferenceforrectangle)
 {
     // ARRANGE
-    Result r = {0, 0, 0};
+    Shaperesult r = {0, 0, 0};
     // ACT
     r.a=15;
     r.b=10;
@@ -30,7 +30,7 @@ TEST_F(shapeTest, checkareaandcircumferenceforrectangle)
 TEST_F(shapeTest, checkareaandcircumferenceforparallellogram)
 {
     // ARRANGE
-    Result r = {0, 0, 0};
+    Shaperesult r = {0, 0, 0};
     // ACT
     r.a = 15;
     r.b=10;
@@ -43,7 +43,7 @@ TEST_F(shapeTest, checkareaandcircumferenceforparallellogram)
 TEST_F(shapeTest, checkareaandcircumferencefortriangle)
 {
     // ARRANGE
-    Result r = {0, 0, 0};
+    Shaperesult r = {0, 0, 0};
     // ACT
     r.a=15;
     r.b=15;
@@ -57,7 +57,7 @@ TEST_F(shapeTest, checkareaandcircumferencefortriangle)
 TEST_F(shapeTest, checkareaandcircumferenceforcirkle)
 {
     // ARRANGE
-    Result r = {0, 0, 0};
+    Shaperesult r = {0, 0, 0};
     // ACT
     r.radius = 5;
     r = circle(r);
