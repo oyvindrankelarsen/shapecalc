@@ -24,7 +24,7 @@ Before the next compile run "mingw32-make clean".
 
 # Credits
 
-safeinput is made by Stefan Holmberg (stefan.holmberg@systementor.se)
+Safeinput is made by Stefan Holmberg (stefan.holmberg@systementor.se)
 
 # Tests
 
