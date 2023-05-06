@@ -22,7 +22,7 @@ float division(float a, float b)
     return a / b;
 }
 
-int modulus(float a, float b)
+int remain(float a, float b)
 {
     return (int)a % (int)b;
 }
@@ -80,7 +80,7 @@ void calcmenu()
 
         else if (sel == 5)
         {
-            int result = modulus(no1, no2);
+            int result = remain(no1, no2);
             printf("The rest of %d och %d is %d\n", (int)no1, (int)no2, (int)result);
         }
 

@@ -59,7 +59,7 @@ TEST_F(calcTest, Checkthatthecalculatorcantheremainderoftwonumbers)
     // ARRANGE
     int result;
     // ACT
-    result = modulus(100, 80);
+    result = remain(100, 80);
     // ASSERT
     ASSERT_EQ(result, 20);
 }
