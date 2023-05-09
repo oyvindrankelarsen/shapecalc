@@ -6,7 +6,7 @@ This project is part of my studies in "Software Development and Autonomous Vehic
 The code consists of two parts, firstly calculating the area and the circumfence of different shapes and secondly to act as a calculator.
 
 # License
-MIT License
+## MIT License
 A short and simple permissive license with conditions only requiring preservation of copyright and license notices. Licensed works, modifications, and larger works may be distributed under different terms and without source code. See LICENSE.
 
 # How to install and run the project
